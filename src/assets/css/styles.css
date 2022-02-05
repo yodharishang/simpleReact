@@ -468,7 +468,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.flex {
+  display: flex;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.grow {
+  flex-grow: 1;
 }
