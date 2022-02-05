@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './assets/css/styles.css';
 
-const title = 'My Minimal React Webpack Nazzgor';
+const title = ' React Webpack Nazzgor';
 
 ReactDOM.render(
   <App title={title} />,
