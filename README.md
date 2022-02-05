@@ -24,12 +24,12 @@ Read how to set it up yourself: [React with Webpack Tutorial](https://www.robinw
 
 ## Alternatives
 
-- [Advanced React Webpack Babel Setup](https://github.com/rwieruch/advanced-react-webpack-babel-setup) via this [Tutorial](https://www.robinwieruch.de/webpack-advanced-setup-tutorial)
+- [Advanced React Webpack Babel setup](https://github.com/rwieruch/advanced-react-webpack-babel-setup) via this [Tutorial](https://www.robinwieruch.de/webpack-advanced-setup-tutorial)
 
 ## Installation
 
-- `git clone git@github.com:rwieruch/minimal-react-webpack-babel-setup.git`
-- cd minimal-react-webpack-babel-setup
+- `git clone https://github.com/pelatge/simpleReact.git`
+- cd simpleReact
 - npm install
 - npm start
 - visit `http://localhost:8080/`
