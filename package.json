@@ -6,6 +6,7 @@
   "scripts": {
     "taildev": "npx tailwindcss -i ./src/assets/css/main.css -o ./src/assets/css/styles.css ",
     "start": "npm run taildev && webpack serve --config ./webpack.config.js --mode development",
+    "stage":"webpack serve --config ./webpack.config.js --mode development",
     "build": "npm run taildev && webpack --config ./webpack.config.js --mode production"
   },
   "keywords": [],
