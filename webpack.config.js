@@ -9,8 +9,13 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
+        use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env','@babel/preset-react']
+        }
+        }
+        },
       {
           test:/\.css$/,
           use:['style-loader','css-loader']
@@ -25,7 +30,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug({
-      template:path.resolve(__dirname,'./public/index.html')
+      template:path.resolve(__dirname,'./dist/index.html')
   })],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),

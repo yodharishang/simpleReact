@@ -1,7 +1,8 @@
 import React from 'react';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import './assets/css/styles.css';
 
-import { Blogs,Home,Contact,NoPage} from './pages'
+import { Layout,Blogs,Home,Contact,NoPage} from './pages'
 
 function App() {
   return (

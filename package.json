@@ -6,7 +6,7 @@
   "scripts": {
     "taildev": "npx tailwindcss -i ./src/assets/css/main.css -o ./src/assets/css/styles.css ",
     "start": "npm run taildev && webpack serve --config ./webpack.config.js --mode development",
-    "stage":"webpack serve --config ./webpack.config.js --mode development",
+    "stage": "webpack serve --config ./webpack.config.js --mode development",
     "build": "npm run taildev && webpack --config ./webpack.config.js --mode production"
   },
   "keywords": [],
@@ -27,8 +27,9 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-dom": "^17.0.1",
+    "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1"
   }
 }
