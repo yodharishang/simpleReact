@@ -25,7 +25,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug({
-      template:path.resolve(__dirname,'./dist/index.html')
+      template:path.resolve(__dirname,'./public/index.html')
   })],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
