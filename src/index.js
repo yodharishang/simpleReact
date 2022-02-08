@@ -5,8 +5,12 @@ import App from './App';
 import './assets/css/styles.css';
 
 
+
+
+
+
 ReactDOM.render(
-  <App/>,
+  <App />,
   document.getElementById('app')
 );
 
