@@ -19,8 +19,22 @@ module.exports = {
       {
           test:/\.css$/,
           use:['style-loader','css-loader']
-      }
+      },
+      {
+        test: /\.html$/i,
+        use: "html-loader",
+      },
+      {
+    test: /\.html$/,
+    exclude: [/node_modules/, require.resolve('./dist/index.html')],
+    use: {
+        loader: 'file-loader',
+    },
+},
     ],
+  },
+  stats:{
+      children:true
   },
   resolve: {
     extensions: ['*', '.js', '.jsx','.css'],
@@ -28,12 +42,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
+    clean:true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug({
+  plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug(/*{
       template:path.resolve(__dirname,'./dist/index.html')
-  })],
+  }*/)],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
     hot: true,
+    historyApiFallback:true
   },
 };
