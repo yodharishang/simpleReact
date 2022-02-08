@@ -41,15 +41,18 @@ module.exports = {
     extensions: ['*', '.js', '.jsx','.css'],
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
-    clean:true
+    clean:true,
+    publicPath: './dist/'
+
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug(/*{
+  plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug({
       template:path.resolve(__dirname,'./dist/index.html')
-  }*/)],
+  })],
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    static: path.join(__dirname, 'dist'),
+    
     hot: true,
     historyApiFallback:true
   },
