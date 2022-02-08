@@ -22,6 +22,9 @@ module.exports = {
       }
     ],
   },
+  stats:{
+    children:true
+  },
   resolve: {
     extensions: ['*', '.js', '.jsx','.css'],
   },
