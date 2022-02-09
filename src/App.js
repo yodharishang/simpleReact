@@ -1,7 +1,7 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -15,7 +15,7 @@ import {
 // making sure things like the back button and bookmarks
 // work properly.
 
-export default function BasicExample() {
+export default function app() {
   return (
     <Router>
       <div>
@@ -34,13 +34,13 @@ export default function BasicExample() {
         <hr />
 
         {/*
-          A <Switch> looks through all its children <Route>
+          A <Routes> looks through all its children <Route>
           elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
+          matches the current URL. Use a <Routes> any time
           you have multiple routes, but you want only one
           of them to render at a time
         */}
-        <Switch>
+        <Routes>
           <Route exact path="/">
             <Home />
           </Route>
@@ -50,7 +50,7 @@ export default function BasicExample() {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
