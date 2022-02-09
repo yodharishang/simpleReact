@@ -48,43 +48,21 @@ const config = {
       }
     ]
   },
-
   devServer: {
-    'static': {
-      directory: './dist'
-    }
-
-  stats:{
-
-    children:true
-  },
-  resolve: {
-    extensions: ['*', '.js', '.jsx','.css'],
-  },
-  output: {
-    path: path.join(__dirname, './dist'),
-    filename: 'bundle.js',
-    clean:true,
-    publicPath: './dist/'
-
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug({
-      template:path.resolve(__dirname,'./src/index.html')
-  })],
-  devServer: {
-    static: path.join(__dirname, 'dist'),
-    
-    hot: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    hot:true,
     historyApiFallback:true
-
   },
   plugins: [
     new CopyPlugin({
       patterns: [{ from: 'src/index.html' }],
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
-     
+      template:'src/index.html',
+      filename:'[name].html',
+      inject:'body'
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     new BundleAnalyzerPlugin({

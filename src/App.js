@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { hot } from 'react-hot-loader/root';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -15,7 +16,7 @@ import {
 // making sure things like the back button and bookmarks
 // work properly.
 
-export default function app() {
+ function App() {
   return (
     <Router>
       <div>
@@ -82,3 +83,5 @@ function Dashboard() {
     </div>
   );
 }
+
+export default hot(App);
