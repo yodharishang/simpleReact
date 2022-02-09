@@ -62,7 +62,7 @@ export default function BasicExample() {
 function Home() {
   return (
     <div>
-      <h2>Home</h2>
+      <h2 className="text-red">Home</h2>
     </div>
   );
 }

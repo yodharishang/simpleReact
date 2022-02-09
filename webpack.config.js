@@ -1,55 +1,93 @@
-const path = require('path');
 const webpack = require('webpack');
-const htmlWebPlug = require('html-webpack-plugin');
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
-  entry: path.resolve(__dirname, './src/index.js'),
+const config = {
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[contenthash].js'
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env','@babel/preset-react']
-        }
-        }
-        },
-      {
-          test:/\.css$/,
-          use:['style-loader','css-loader']
+        use: 'babel-loader',
+        exclude: /node_modules/
       },
       {
-        test: /\.html$/i,
-        use: "html-loader",
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          'postcss-loader'
+        ]
       },
       {
-    test: /\.html$/,
-    exclude: [/node_modules/, require.resolve('./dist/index.html')],
-    use: {
-        loader: 'file-loader',
-    },
-},
-    ],
+        test: /\.png$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              mimetype: 'image/png'
+            }
+          }
+        ]
+      }
+    ]
   },
-  stats:{
-      children:true
-  },
-  resolve: {
-    extensions: ['*', '.js', '.jsx','.css'],
-  },
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
-    clean:true
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug(/*{
-      template:path.resolve(__dirname,'./dist/index.html')
-  }*/)],
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
-    hot: true,
-    historyApiFallback:true
+    'static': {
+      directory: './dist'
+    }
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ from: 'src/index.html' }],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+     
+    }),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
+    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin()
+  ],
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  }
+};
+
+module.exports = (env, argv) => {
+  if (argv.hot) {
+    // Cannot use 'contenthash' when hot reloading is enabled.
+    config.output.filename = '[name].[hash].js';
+  }
+
+  return config;
 };
