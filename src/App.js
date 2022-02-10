@@ -1,11 +1,6 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
 import { hot } from 'react-hot-loader/root';
+import React from "react";
+
 import { Home } from './Pages';
 
 class App extends React.Component {
@@ -21,8 +16,5 @@ class App extends React.Component {
     );
   }
 }
-
-
-
 
 export default hot(App);
