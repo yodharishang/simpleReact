@@ -1,27 +1,27 @@
 import React from "react";
-<<<<<<< HEAD
-import { hot } from 'react-hot-loader/root';
-import { Home } from './Pages';
-
-class App extends React.Component {
-  render() {
-    const { name } = this.props;
-    return (
-      <>
-      <Home />
-        <h1 className="text-4xl text-white bg-red-100">
-          Hello  {name}, apa kabar????
-        </h1>
-      </>
-    );
-  }
-=======
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from "react-router-dom";
+import { hot } from 'react-hot-loader/root';
+import { Home } from './Pages';
+
+// class App extends React.Component {
+//   render() {
+//     const { name } = this.props;
+//     return (
+//       <>
+//       <Home />
+//         <h1 className="text-4xl text-white bg-red-100">
+//           Hello  {name}, apa kabar????
+//         </h1>
+//       </>
+//     );
+//   }
+
+
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -32,7 +32,7 @@ import {
 // making sure things like the back button and bookmarks
 // work properly.
 
-export default function app() {
+function App() {
   return (
     <Router>
       <div>
@@ -82,7 +82,7 @@ function Home() {
       <h2 className="text-red">Home</h2>
     </div>
   );
->>>>>>> 7424d5893e43c515f7d8ebabe0c2873486971ce8
+
 }
 
 export default hot(App);
