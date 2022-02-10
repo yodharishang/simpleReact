@@ -60,13 +60,7 @@ const config = {
     path: path.join(__dirname, './dist'),
     filename: '[name].bundle.js',
     clean:true,
-  
-
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin(),new htmlWebPlug({
-      template:path.resolve(__dirname,'./src/index.html')
-  })],
-
+    },
   devServer: {
     'static': {
       directory: path.join('dist')
