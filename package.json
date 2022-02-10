@@ -4,10 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "taildev": "npx tailwindcss -i ./src/main.css -o ./src/assets/css/styles.css ",
     "start": " webpack serve --hot --mode development",
     "dev": "webpack  --mode development ",
     "build": "webpack --mode production"
+=======
+    "taildev": "npx tailwindcss -i ./src/assets/css/main.css -o ./src/assets/css/styles.css ",
+<<<<<<< HEAD
+    "build-dev": " webpack --mode development",
+    "start": "webpack serve  --hot  --mode development",
+    "build-prod": " webpack  --mode production"
+=======
+    "start": "npm run taildev && webpack serve --config ./webpack.config.js --mode development",
+    "stage": "webpack serve --config ./webpack.config.js --mode development ",
+    "build": "npm run taildev && webpack --config ./webpack.config.js --mode production"
+>>>>>>> 825b560b1fba8bcb933f964460d9169d897b8314
+>>>>>>> 7424d5893e43c515f7d8ebabe0c2873486971ce8
   },
   "keywords": [],
   "author": "",
@@ -16,7 +29,12 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
+<<<<<<< HEAD
+    "@hot-loader/react-dom": "^17.0.2",
+    "babel-jest": "^27.5.1",
+=======
     "autoprefixer": "^10.4.2",
+>>>>>>> 825b560b1fba8bcb933f964460d9169d897b8314
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
@@ -24,14 +42,31 @@
     "file-loader": "^6.2.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+<<<<<<< HEAD
     "mini-css-extract-plugin": "^2.5.3",
+=======
+<<<<<<< HEAD
+    "jest": "^27.5.1",
+    "mini-css-extract-plugin": "^2.5.3",
+    "postcss-loader": "^6.2.1",
+    "react-hot-loader": "^4.13.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.68.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+=======
+>>>>>>> 7424d5893e43c515f7d8ebabe0c2873486971ce8
     "postcss": "^8.4.6",
     "postcss-loader": "^6.2.1",
     "react-hot-loader": "^4.13.0",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.19",
     "webpack": "^5.68.0",
+<<<<<<< HEAD
     "webpack-bundle-analyzer": "^4.5.0",
+=======
+>>>>>>> 825b560b1fba8bcb933f964460d9169d897b8314
+>>>>>>> 7424d5893e43c515f7d8ebabe0c2873486971ce8
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
