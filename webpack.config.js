@@ -2,9 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 const config = {
   entry: [
@@ -13,7 +15,9 @@ const config = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js'
+
+    filename: '[name].bundle.js'
+
   },
   module: {
     rules: [
@@ -48,21 +52,31 @@ const config = {
       }
     ]
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx','.css'],
+  },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
+    'static': {
+      directory: path.join('dist'),
     hot:true,
     historyApiFallback:true
+    }
   },
   plugins: [
     new CopyPlugin({
       patterns: [{ from: 'src/index.html' }],
     }),
     new HtmlWebpackPlugin({
-      template:'src/index.html',
-      filename:'[name].html',
-      inject:'body'
+      // templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
+      filename: '[name].html',
+      template:path.resolve(__dirname,'src/index.html')
+    }),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,     
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     new BundleAnalyzerPlugin({
@@ -89,7 +103,11 @@ const config = {
 module.exports = (env, argv) => {
   if (argv.hot) {
     // Cannot use 'contenthash' when hot reloading is enabled.
-    config.output.filename = '[name].[hash].js';
+
+    config.output = {
+    path: path.resolve(__dirname, 'public'),
+    filename: '[name].js'
+  };
   }
 
   return config;

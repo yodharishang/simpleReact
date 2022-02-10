@@ -6,6 +6,22 @@ import {
   Link
 } from "react-router-dom";
 import { hot } from 'react-hot-loader/root';
+//import { Home } from './Pages';
+
+// class App extends React.Component {
+//   render() {
+//     const { name } = this.props;
+//     return (
+//       <>
+//       <Home />
+//         <h1 className="text-4xl text-white bg-red-100">
+//           Hello  {name}, apa kabar????
+//         </h1>
+//       </>
+//     );
+//   }
+
+
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -15,8 +31,7 @@ import { hot } from 'react-hot-loader/root';
 // through the site. This preserves the browser history,
 // making sure things like the back button and bookmarks
 // work properly.
-
- function App() {
+function App() {
   return (
     <Router>
       <div>
@@ -66,7 +81,9 @@ function Home() {
       <h2 className="text-red">Home</h2>
     </div>
   );
+
 }
+
 
 function About() {
   return (
