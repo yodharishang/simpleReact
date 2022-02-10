@@ -24,6 +24,11 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
+        'options':{
+          cacheDirectory:true,
+          plugins:['react-hot-loader/babel']
+        }
+       ,
         exclude: /node_modules/
       },
       {
@@ -49,6 +54,10 @@ const config = {
             }
           }
         ]
+      },
+      {
+        test:/\.html$/,
+        loader:'html-loader'
       }
     ]
 
@@ -112,10 +121,7 @@ module.exports = (env, argv) => {
   if (argv.hot) {
     // Cannot use 'contenthash' when hot reloading is enabled.
 
-    config.output = {
-    path: path.resolve(__dirname, 'public'),
-    filename: '[name].js'
-  };
+    config.output.filename = '[name].[hash].js';
   }
 
   return config;
