@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import React from "react";
 
-import { Home } from './Pages';
+import { Home,Blogs } from './Pages';
 
 class App extends React.Component {
   render() {
@@ -9,9 +9,7 @@ class App extends React.Component {
     return (
       <>
       <Home />
-        <h1 className="text-4xl text-white bg-red-100">
-          Hello..  {name}, apa kabar????
-        </h1>
+      <Blogs />
       </>
     );
   }
