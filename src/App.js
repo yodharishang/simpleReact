@@ -3,8 +3,12 @@ import React from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {increment,decrement} from "./redux/actions/counter"
 import { Home,Blogs } from './Pages';
-
-
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route
+// } from "react-router-dom";
+import { Home,Blogs,About } from './Pages';
 
 function App(){
   const counter = useSelector( (state) => state.counter);
