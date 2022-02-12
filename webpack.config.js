@@ -5,8 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 //const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 //const HtmlWebpackInjector = require('html-webpack-injector');
+
 
 const config = {
   entry: [
@@ -94,7 +96,7 @@ const config = {
       analyzerMode: 'static',
       openAnalyzer: false,
     }),
-    //new HtmlWebpackInjector()
+    new HtmlWebpackInjector()
   ],
   // optimization: {
   //   runtimeChunk: 'single',

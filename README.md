@@ -1,20 +1,20 @@
-# minimal-react-webpack-babel-setup
+# minimal-react-webpack-babel-tailwind-setup
 
-[![Build Status](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup.svg?branch=master)](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup) [![Greenkeeper badge](https://badges.greenkeeper.io/rwieruch/minimal-react-webpack-babel-setup.svg)](https://greenkeeper.io/)
 
-Read how to set it up yourself: [React with Webpack Tutorial](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/).
+silahkan baca tutorial setup untuk react dengan webpack: [React with Webpack Tutorial](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/).
 
-[![Edit minimal-react-webpack-babel-setup](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/rwieruch/minimal-react-webpack-babel-setup/tree/master/?fontsize=14)
 
-## Features
 
-- React 16
+## Feature
+
+- React 17
 - Webpack 5
 - Babel 7
 - Hot Module Replacement
+- tailwindcss
 
 ## DIY Add-Ons
-
+- [Referensi:]
 - [ESLint](https://www.robinwieruch.de/react-eslint-webpack-babel/)
 - [CSS Modules](https://www.robinwieruch.de/react-css-modules/)
 - [SVG Icons](https://www.robinwieruch.de/react-svg-icon-components/)
@@ -24,7 +24,7 @@ Read how to set it up yourself: [React with Webpack Tutorial](https://www.robinw
 
 ## Alternatives
 
-- [Advanced React Webpack Babel setup](https://github.com/rwieruch/advanced-react-webpack-babel-setup) via this [Tutorial](https://www.robinwieruch.de/webpack-advanced-setup-tutorial)
+- [silahkan jika ingin yang lebih advance disini](https://github.com/rwieruch/advanced-react-webpack-babel-setup) via this [Tutorial](https://www.robinwieruch.de/webpack-advanced-setup-tutorial)
 
 ## Installation
 
