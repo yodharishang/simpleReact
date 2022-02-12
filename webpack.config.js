@@ -72,6 +72,7 @@ const config = {
       const port = devServer.server.address().port;
       console.log('Listening on port:', port);
     },
+    historyApiFallback:true
   },
   
   plugins: [
