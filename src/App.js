@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import React from "react";
 
-import { Home,Blogs } from './Pages';
+import { Home,Blogs,About } from './Pages';
 
 class App extends React.Component {
   render() {
@@ -10,6 +10,7 @@ class App extends React.Component {
       <>
       <Home />
       <Blogs />
+      <About />
       </>
     );
   }

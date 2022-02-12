@@ -96,7 +96,7 @@ const config = {
       analyzerMode: 'static',
       openAnalyzer: false,
     }),
-    new HtmlWebpackInjector()
+  //  new HtmlWebpackInjector()
   ],
   // optimization: {
   //   runtimeChunk: 'single',
@@ -115,7 +115,7 @@ const config = {
 module.exports = (env, argv) => {
   if (argv.hot) {
     // Cannot use 'contenthash' when hot reloading is enabled.
-    config.output.filename = '[name].js';
+    config.output.filename = '[name].[hash].js';
   }
   if (argv.mode === 'development') {
     config.devtool = 'source-map';
