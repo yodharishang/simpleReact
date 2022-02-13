@@ -10,11 +10,11 @@ import App from './App';
 import './Assets/Css/main.css';
 
 ReactDOM.render(
-<AppContainer>
  <Provider store={store}>
+ <AppContainer>
   <App />
+    </AppContainer>
   </Provider>,
-  </AppContainer>,
   document.getElementById('app')
 );
 
@@ -28,7 +28,7 @@ if(module.hot){
     <AppContainer>
     <NextApp />
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById('app')
     );
     
     });
