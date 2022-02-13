@@ -2,7 +2,6 @@ import { hot } from 'react-hot-loader/root';
 import React from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {increment,decrement} from "./redux/actions/counter"
-import { Home,Blogs } from './Pages';
 // import {
 //   BrowserRouter,
 //   Routes,

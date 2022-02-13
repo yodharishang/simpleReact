@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
 import store from "./redux/Store";
-
 import { AppContainer } from 'react-hot-loader';
 
 import App from './App';
@@ -10,11 +9,11 @@ import App from './App';
 import './Assets/Css/main.css';
 
 ReactDOM.render(
-<AppContainer>
  <Provider store={store}>
-  <App />
-  </Provider>,
-  </AppContainer>,
+ <AppContainer>
+  	<App />
+  </AppContainer>
+ </Provider>,  
   document.getElementById('app')
 );
 
@@ -28,7 +27,7 @@ if(module.hot){
     <AppContainer>
     <NextApp />
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById('app')
     );
     
     });
