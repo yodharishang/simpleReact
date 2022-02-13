@@ -63,7 +63,7 @@ const config = {
     },
     open: true,
     watchFiles: ['dist/**/*'],
-    hot:true,   
+    hot:true,
     onListening: function (devServer) {
       if (!devServer) {
         throw new Error('webpack-dev-server is not defined');
