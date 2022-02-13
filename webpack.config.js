@@ -11,10 +11,12 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 
 const config = {
-  entry: [
+  // Entrypoint file input
+    entry: [
     'react-hot-loader/patch',
     './src/index.js'
   ],
+  //entrypoint file output
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
@@ -57,6 +59,7 @@ const config = {
       'react-dom': '@hot-loader/react-dom',
     },
   },
+  // dev server settings
   devServer: {
     'static': {
       directory: './dist'
@@ -72,7 +75,10 @@ const config = {
       const port = devServer.server.address().port;
       console.log('Listening on port:', port);
     },
-    historyApiFallback:true
+    historyApiFallback:true,
+    client: {
+      reconnect: true,
+    },
   },
   
   plugins: [

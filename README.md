@@ -4,14 +4,28 @@
 silahkan baca tutorial setup untuk react dengan webpack: [React with Webpack Tutorial](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/).
 
 
-
 ## Feature
 
 - React 17
 - Webpack 5
 - Babel 7
 - Hot Module Replacement
-- tailwindcss
+- tailwindcs 
+- Redux
+- Axios
+
+## RestApi
+
+- Routes (via https://jsonplaceholder.typicode.com/)
+All HTTP methods are supported :    
+GET     /posts
+GET     /posts/1
+GET     /posts/1/comments
+GET     /comments?postId=1
+POST    /posts
+PUT     /posts/1
+PATCH   /posts/1
+DELETE  /posts/1
 
 ## DIY Add-Ons
 - [Referensi:]
