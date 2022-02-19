@@ -16,16 +16,16 @@ silahkan baca tutorial setup untuk react dengan webpack: [React with Webpack Tut
 
 ## RestApi
 
-- Routes (via https://jsonplaceholder.typicode.com/)
-All HTTP methods are supported :    
-GET     /posts
-GET     /posts/1
-GET     /posts/1/comments
-GET     /comments?postId=1
-POST    /posts
-PUT     /posts/1
-PATCH   /posts/1
-DELETE  /posts/1
+>[Routes (via https://jsonplaceholder.typicode.com/)]
+- All HTTP methods are supported :    
+- GET     /posts
+- GET     /posts/1
+- GET     /posts/1/comments
+- GET     /comments?postId=1
+- POST    /posts
+- PUT     /posts/1
+- PATCH   /posts/1
+- DELETE  /posts/1
 
 ## DIY Add-Ons
 - [Referensi:]
@@ -41,9 +41,16 @@ DELETE  /posts/1
 - [silahkan jika ingin yang lebih advance disini](https://github.com/rwieruch/advanced-react-webpack-babel-setup) via this [Tutorial](https://www.robinwieruch.de/webpack-advanced-setup-tutorial)
 
 ## Installation
-
-- `git clone https://github.com/pelatge/simpleReact.git`
-- cd simpleReact
-- npm install
-- npm start
+'''
+ git clone https://github.com/pelatge/simpleReact.git
+'''
+'''
+ cd simpleReact
+'''
+'''
+npm install
+'''
+'''
+ npm start
+'''
 - visit `http://localhost:8080/`
