@@ -41,16 +41,16 @@ silahkan baca tutorial setup untuk react dengan webpack: [React with Webpack Tut
 - [silahkan jika ingin yang lebih advance disini](https://github.com/rwieruch/advanced-react-webpack-babel-setup) via this [Tutorial](https://www.robinwieruch.de/webpack-advanced-setup-tutorial)
 
 ## Installation
-'''
+```
  git clone https://github.com/pelatge/simpleReact.git
-'''
-'''
+```
+```
  cd simpleReact
-'''
-'''
+```
+```
 npm install
-'''
-'''
+```
+```
  npm start
-'''
+```
 - visit `http://localhost:8080/`
